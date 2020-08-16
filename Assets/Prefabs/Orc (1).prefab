@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3719546797058156015}
   - component: {fileID: 1140376158839293789}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6418929853258382679}
   - component: {fileID: 6682310613332298627}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +175,8 @@ GameObject:
   - component: {fileID: 4287088895897255879}
   - component: {fileID: 805803881}
   - component: {fileID: 3718524089875720101}
-  m_Layer: 0
+  - component: {fileID: 1500957875076680921}
+  m_Layer: 8
   m_Name: Orc (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,6 +245,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.56332606, y: 0.47880793}
   m_EdgeRadius: 0
+--- !u!114 &1500957875076680921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878111513071148839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 276016630f646a44db75bafa49447a48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsSelected: 0
+  TileSpeed: 2
+  UnitHasMoved: 0
+  MoveSpeed: 7
 --- !u!1 &5720269078568178133
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5838792277335680404}
   - component: {fileID: 5444487053573238588}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575874776112648685}
   - component: {fileID: 7441570552981372273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -421,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5889911084196553768}
   - component: {fileID: 4818208557849621484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Shield
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -503,7 +520,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5503219620781901730}
   - component: {fileID: 7056320192097882607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Orc Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
