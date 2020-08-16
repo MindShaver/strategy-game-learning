@@ -7,7 +7,8 @@ public class Unit : MonoBehaviour
     public bool IsSelected;
     public int TileSpeed;
     public bool UnitHasMoved;
-    public GameMaster Master;
+    GameMaster Master;
+    public float MoveSpeed;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class Unit : MonoBehaviour
         {
             IsSelected = false;
             Master.SelectedUnit = null;
+            Master.ResetTiles();
         }
         else
         {
@@ -31,6 +33,7 @@ public class Unit : MonoBehaviour
             IsSelected = true;
             Master.SelectedUnit = this;
 
+            Master.ResetTiles();
             GetWalkableTiles();
         }
     }
@@ -59,5 +62,28 @@ public class Unit : MonoBehaviour
         // Basic X Y math for horizontal and vertical movement.
         // TODO: Implement an A* algorthim.
         return (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y)) <= TileSpeed;
+    }
+
+    public void Move(Vector2 tilePosition)
+    {
+        Master.ResetTiles();
+        StartCoroutine(StartMovement(tilePosition));
+    }
+
+    IEnumerator StartMovement(Vector2 tilePosition)
+    {
+        while (transform.position.x != tilePosition.x)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(tilePosition.x, transform.position.y), MoveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        while (transform.position.y != tilePosition.y)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, tilePosition.y), MoveSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        UnitHasMoved = true;
     }
 }

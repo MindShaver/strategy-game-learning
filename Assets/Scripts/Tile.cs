@@ -26,7 +26,7 @@ public class Tile : MonoBehaviour
     private void OnMouseEnter()
     {
         // Don't scale tiles with Obstacles.
-        if(IsTileClear())
+        if (IsTileClear())
         {
             // Scale up our tile when mouse enters tile.
             transform.localScale += Vector3.one * HoverAmount;
@@ -36,7 +36,7 @@ public class Tile : MonoBehaviour
     private void OnMouseExit()
     {
         // Don't Descale Tiles with Obstacles.
-        if(IsTileClear())
+        if (IsTileClear())
         {
             // Scale down our tile when mouse leaves tile.
             transform.localScale -= Vector3.one * HoverAmount;
@@ -68,5 +68,13 @@ public class Tile : MonoBehaviour
     {
         _spriteRenderer.color = Color.white;
         IsWalkable = false;
+    }
+
+    private void OnMouseDown()
+    {
+        if (IsWalkable && Master.SelectedUnit != null)
+        {
+            Master.SelectedUnit.Move(this.transform.position);
+        }
     }
 }
