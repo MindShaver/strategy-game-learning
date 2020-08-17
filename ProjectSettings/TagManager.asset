@@ -50,6 +50,9 @@ TagManager:
   - name: Unit
     uniqueID: 3986016129
     locked: 0
+  - name: Attack Sword
+    uniqueID: 1113305233
+    locked: 0
   - name: Cursor
     uniqueID: 3854283293
     locked: 0

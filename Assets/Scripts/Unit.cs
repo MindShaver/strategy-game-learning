@@ -4,12 +4,22 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
+    // Turn Based Functionality
+    GameMaster Master;
+    public int PlayerNumber;
+
+    // Movement Functionality
     public bool IsSelected;
     public int TileSpeed;
     public bool UnitHasMoved;
-    GameMaster Master;
     public float MoveSpeed;
-    public int PlayerNumber;
+
+    // Attack Functionality
+    public int AttackRange;
+    List<Unit> EnemiesInRange = new List<Unit>();
+    public bool UnitHasAttacked;
+
+    public GameObject AttackIcon;
 
     private void Start()
     {
@@ -18,6 +28,8 @@ public class Unit : MonoBehaviour
 
     private void OnMouseDown()
     {
+        ResetAttackIcons();
+
         if (IsSelected == true)
         {
             IsSelected = false;
@@ -37,6 +49,7 @@ public class Unit : MonoBehaviour
                 Master.SelectedUnit = this;
 
                 Master.ResetTiles();
+                GetEnemies();
                 GetWalkableTiles();
             }
         }
@@ -61,11 +74,42 @@ public class Unit : MonoBehaviour
         }
     }
 
+    void GetEnemies()
+    {
+        EnemiesInRange.Clear();
+
+        foreach(Unit unit in FindObjectsOfType<Unit>())
+        {
+            if(CanAttack(unit))
+            {
+                if (unit.PlayerNumber != Master.PlayerTurn && UnitHasAttacked == false)
+                {
+                    EnemiesInRange.Add(unit);
+                    unit.AttackIcon.SetActive(true);
+                }
+            }
+        }
+    }
+
+    public void ResetAttackIcons()
+    {
+        foreach(Unit unit in FindObjectsOfType<Unit>())
+        {
+            unit.AttackIcon.SetActive(false);
+        }
+    }
+
     private bool CanMove(Tile tile)
     {
         // Basic X Y math for horizontal and vertical movement.
         // TODO: Implement an A* algorthim.
         return (Mathf.Abs(transform.position.x - tile.transform.position.x) + Mathf.Abs(transform.position.y - tile.transform.position.y)) <= TileSpeed;
+    }
+
+    private bool CanAttack(Unit unit)
+    {
+        return (Mathf.Abs(transform.position.x - unit.transform.position.x) + Mathf.Abs(transform.position.y - unit.transform.position.y)) <= AttackRange;
+
     }
 
     public void Move(Vector2 tilePosition)
@@ -90,5 +134,7 @@ public class Unit : MonoBehaviour
         }
 
         UnitHasMoved = true;
+        ResetAttackIcons();
+        GetEnemies();
     }
 }
