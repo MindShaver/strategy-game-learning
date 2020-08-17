@@ -433,6 +433,10 @@ MonoBehaviour:
   MoveSpeed: 10
   AttackRange: 1
   UnitHasAttacked: 0
+  Health: 10
+  AttackDamage: 5
+  Armor: 1
+  DIcon: {fileID: 4422204420670149053, guid: d2963537c0631b2498e7bd86db40b947, type: 3}
   AttackIcon: {fileID: 4095409308787556836}
 --- !u!114 &6710022569099876366
 MonoBehaviour:

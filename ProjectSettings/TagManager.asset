@@ -53,6 +53,9 @@ TagManager:
   - name: Attack Sword
     uniqueID: 1113305233
     locked: 0
+  - name: DamageIcon
+    uniqueID: 1677979621
+    locked: 0
   - name: Cursor
     uniqueID: 3854283293
     locked: 0

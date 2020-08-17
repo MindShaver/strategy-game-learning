@@ -58,6 +58,7 @@ public class GameMaster : MonoBehaviour
         {
             unit.UnitHasMoved = false;
             unit.AttackIcon.SetActive(false);
+            unit.UnitHasAttacked = false;
         }
     }
 }

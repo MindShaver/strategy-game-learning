@@ -18,6 +18,12 @@ public class Unit : MonoBehaviour
     public int AttackRange;
     List<Unit> EnemiesInRange = new List<Unit>();
     public bool UnitHasAttacked;
+    public int Health;
+    public int AttackDamage;
+    //public int DefenseDamage;
+    public int Armor;
+
+    public DamageIcon DIcon;
 
     public GameObject AttackIcon;
 
@@ -53,6 +59,49 @@ public class Unit : MonoBehaviour
                 GetWalkableTiles();
             }
         }
+
+        Collider2D collider = Physics2D.OverlapCircle(Camera.main.ScreenToWorldPoint(Input.mousePosition), 0.15f);
+        Unit unit = collider.GetComponent<Unit>();
+        if(Master.SelectedUnit != null)
+        {
+            if(Master.SelectedUnit.EnemiesInRange.Contains(unit) && Master.SelectedUnit.UnitHasAttacked == false)
+            {
+                Master.SelectedUnit.Attack(unit);
+            }
+        }
+
+    }
+
+    void Attack(Unit enemy)
+    {
+        UnitHasAttacked = true;
+        int enemyDamage = AttackDamage - enemy.Armor;
+        //int unitDamage = enemy.DefenseDamage - Armor;
+        Vector2 enemyPosition = new Vector2(enemy.transform.position.x, enemy.transform.position.y + 0.5f);
+
+        if(enemyDamage >= 1)
+        {
+           DamageIcon instance = Instantiate(DIcon, enemyPosition, Quaternion.identity);
+            instance.Setup(enemyDamage);
+            enemy.Health -= enemyDamage;
+        }
+
+        //if(unitDamage >= 1)
+        //{
+        //    Health -= unitDamage;
+        //}
+
+        if(enemy.Health <= 0)
+        {
+            Destroy(enemy.gameObject);
+            GetWalkableTiles();
+        }
+
+        //if(Health <= 0)
+        //{
+        //    Master.ResetTiles();
+        //    Destroy(this.gameObject);
+        //}
     }
 
     private void GetWalkableTiles()
