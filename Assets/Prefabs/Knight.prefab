@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 3258053597983542438}
   - component: {fileID: 2721902341915951963}
   - component: {fileID: 4349395941885446725}
+  - component: {fileID: 6710022569099876366}
   m_Layer: 8
   m_Name: Knight
   m_TagString: Untagged
@@ -399,7 +400,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.04934825, y: 0.058470726}
+  m_Offset: {x: -0.0255166, y: 0.1391316}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -410,7 +411,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45561633, y: 0.4476347}
+  m_Size: {x: 0.6499359, y: 0.60895646}
   m_EdgeRadius: 0
 --- !u!114 &4349395941885446725
 MonoBehaviour:
@@ -427,8 +428,21 @@ MonoBehaviour:
   IsSelected: 0
   TileSpeed: 3
   UnitHasMoved: 0
-  Master: {fileID: 0}
   MoveSpeed: 10
+  PlayerNumber: 2
+--- !u!114 &6710022569099876366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3258053597983542439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96b68e1cb73fc8468548c7b7aec2d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoverAmount: 0.2
 --- !u!1 &3258053598161895154
 GameObject:
   m_ObjectHideFlags: 0

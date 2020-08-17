@@ -38,6 +38,18 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Tile
+    uniqueID: 4057598451
+    locked: 0
+  - name: SelectedSquare
+    uniqueID: 458002269
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Unit
+    uniqueID: 3986016129
+    locked: 0
+  - name: Cursor
+    uniqueID: 3854283293
     locked: 0

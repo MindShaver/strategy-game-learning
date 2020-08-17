@@ -67,8 +67,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -308951167
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 2090174075836721236, guid: f3f096a9354c1f64ab63b458e8522624,
     type: 3}
@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 805803881}
   - component: {fileID: 3718524089875720101}
   - component: {fileID: 1500957875076680921}
+  - component: {fileID: 2457484599042726355}
   m_Layer: 8
   m_Name: Orc (1)
   m_TagString: Untagged
@@ -232,7 +233,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0211294, y: 0.035215616}
+  m_Offset: {x: -0.0211294, y: 0.15763271}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -243,7 +244,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.56332606, y: 0.47880793}
+  m_Size: {x: 0.56332606, y: 0.7236421}
   m_EdgeRadius: 0
 --- !u!114 &1500957875076680921
 MonoBehaviour:
@@ -261,6 +262,20 @@ MonoBehaviour:
   TileSpeed: 2
   UnitHasMoved: 0
   MoveSpeed: 7
+  PlayerNumber: 1
+--- !u!114 &2457484599042726355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4878111513071148839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96b68e1cb73fc8468548c7b7aec2d80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HoverAmount: 0.2
 --- !u!1 &5720269078568178133
 GameObject:
   m_ObjectHideFlags: 0
@@ -413,8 +428,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -308951167
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -9003958548615516068, guid: f3f096a9354c1f64ab63b458e8522624,
     type: 3}
@@ -577,8 +592,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -308951167
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -4561745191760880128, guid: f3f096a9354c1f64ab63b458e8522624,
     type: 3}

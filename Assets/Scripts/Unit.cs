@@ -9,6 +9,7 @@ public class Unit : MonoBehaviour
     public bool UnitHasMoved;
     GameMaster Master;
     public float MoveSpeed;
+    public int PlayerNumber;
 
     private void Start()
     {
@@ -25,16 +26,19 @@ public class Unit : MonoBehaviour
         }
         else
         {
-            if (Master.SelectedUnit != null)
+            if(PlayerNumber == Master.PlayerTurn)
             {
-                Master.SelectedUnit.IsSelected = false;
+                if (Master.SelectedUnit != null)
+                {
+                    Master.SelectedUnit.IsSelected = false;
+                }
+
+                IsSelected = true;
+                Master.SelectedUnit = this;
+
+                Master.ResetTiles();
+                GetWalkableTiles();
             }
-
-            IsSelected = true;
-            Master.SelectedUnit = this;
-
-            Master.ResetTiles();
-            GetWalkableTiles();
         }
     }
 
@@ -67,6 +71,7 @@ public class Unit : MonoBehaviour
     public void Move(Vector2 tilePosition)
     {
         Master.ResetTiles();
+
         StartCoroutine(StartMovement(tilePosition));
     }
 
